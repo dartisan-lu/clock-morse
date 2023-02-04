@@ -1,46 +1,21 @@
-import 'package:clock_morse/game.dart';
-import 'package:flame_splash_screen/flame_splash_screen.dart';
+import 'package:clock_morse/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MainApp());
 }
 
-class MyApp extends StatelessWidget {
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SplashScreenGame(),
-      theme: ThemeData.dark(),
+      home: const SplashScreen(),
+      theme: ThemeData.dark(useMaterial3: true),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class SplashScreenGame extends StatefulWidget {
-  @override
-  _SplashScreenGameState createState() => _SplashScreenGameState();
-}
 
-class _SplashScreenGameState extends State<SplashScreenGame> {
-  late FlameSplashController controller;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: FlameSplashScreen(
-        showBefore: (BuildContext context) {
-          return const Text('Before logo');
-        },
-        showAfter: (BuildContext context) {
-          return const Text('After logo');
-        },
-        theme: FlameSplashTheme.dark,
-        onFinish: (context) => Navigator.pushReplacement<void, void>(
-          context,
-          MaterialPageRoute(builder: (context) => MyGameWidget()),
-        ),
-      ),
-    );
-  }
-}
