@@ -11,7 +11,7 @@ class MorseButton extends CircleComponent with TapCallbacks {
 
   MorseButton(Vector2 position, this.onTap) : super(
     position: position,
-    radius: 30.0,
+    radius: 60.0,
     anchor: Anchor.center,
   );
 
