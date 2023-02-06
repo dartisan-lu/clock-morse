@@ -18,7 +18,7 @@ class MorseButton extends CircleComponent with TapCallbacks {
   @override
   void onTapDown(TapDownEvent event) {
     event.handled = true;
-    _char = '.';
+    _char = '·';
   }
 
   @override

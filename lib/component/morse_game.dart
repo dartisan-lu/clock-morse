@@ -1,3 +1,4 @@
+import 'package:clock_morse/component/arc_text.dart';
 import 'package:clock_morse/component/morse_button.dart';
 import 'package:flame/components.dart';
 import 'package:flame/experimental.dart';
@@ -10,24 +11,28 @@ final regular = TextPaint(style: style);
 
 class MorseGame extends FlameGame with HasTappableComponents {
   late TextComponent _text;
+  late ArcText _arcText;
   String code = "";
 
   tap(String next) {
     code = code + next;
-    _text.text = code;
+    _arcText.text = code;
   }
 
   @override
   Future<void> onLoad() async {
     add(MorseButton(size / 2, tap));
 
+    var pos = size / 2;
+
     _text = TextComponent(
-        text: code,
+        text: "Push",
         textRenderer: regular,
         anchor: Anchor.center,
-        position: size / 2
+        position: pos
     );
-
     add(_text);
+    _arcText = ArcText(code, 45.0, 80.0, 24.0, position: pos);
+    add(_arcText);
   }
 }
