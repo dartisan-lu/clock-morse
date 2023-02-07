@@ -5,7 +5,7 @@ import '../component/morse_game.dart';
 
 class MorseWidget extends StatelessWidget {
   final game = MorseGame();
-  
+
   MorseWidget({super.key});
 
   @override
@@ -13,4 +13,3 @@ class MorseWidget extends StatelessWidget {
     return GameWidget(game: game);
   }
 }
-

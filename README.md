@@ -15,3 +15,6 @@ cp -rf ./build/web/ ./docs/
 
 https://dartisan-lu.github.io/clock-morse/#/
 
+![](https://github.com/dartisan-lu/clock-morse/blob/master/docs/record.gif)
+
+Converting video with: https://cloudconvert.com/webm-to-gif
